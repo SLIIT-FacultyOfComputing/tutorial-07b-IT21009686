@@ -3,11 +3,26 @@
 using namespace std;
 
 // 4. Implement Default Constructor Implementation
-// 5. Implement Overloaded Constructor Implementation
-// 6. Implement Destructor (display "Destructor Called")
+Item:: Item(){
+  itemCode = 0;
+  unitPrice = 0;
+  discount = 0;
+}
 
-void Item::setDiscount(float pdiscount) {
-  discount = pdiscount;
+// 5. Implement Overloaded Constructor Implementation
+Item::Item(int pitemCode, float puPrice){
+  itemCode = pitemCode;
+  unitPrice = puPrice;
+}
+
+// 6. Implement Destructor (display "Destructor Called")
+Item::~Item(){
+  cout<< "Destructor Called" << endl;
+}
+//will automatically be called when the program terminates as 2 static objects where created. so the Destructor is called twice to delete both objects
+
+void Item::setDiscount(float pDiscount) {
+  discount = pDiscount;
 }
 
 float Item::getDiscount() {
@@ -15,7 +30,7 @@ float Item::getDiscount() {
 }
 
 float Item::discountedPrice() {
-   return unitPrice - unitPrice * discount/100;
+   return unitPrice - (unitPrice * discount/100);
 }
 
 void Item::display() {

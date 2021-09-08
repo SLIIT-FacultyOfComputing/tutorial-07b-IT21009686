@@ -10,8 +10,8 @@ Rectangle::Rectangle() {
 
 // Overloaded Constructor Implemenation
 Rectangle::Rectangle(int l, int w) {
-  length = l;
-  width = w;
+   length = l;
+   width = w;
 }
 // Destructor Implementation
 Rectangle::~Rectangle() {
